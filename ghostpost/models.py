@@ -18,3 +18,7 @@ class GhostPost(models.Model):
     def __str__(self):
         return f" {self.post} | {self.post_type} "
     
+    @property
+    def score(self):
+        return self.upvote - self.downvote
+    
