@@ -34,14 +34,14 @@ class GhostPostViewSet(ModelViewSet):
     
     @action(detail=True, methods=['post'])
     def upvote(self, request, pk=None):
-        vote = GhostPost.objects.filter(pk=post_id).first()
+        vote = GhostPost.objects.filter(id=pk).first()
         vote.upvote += 1
         vote.save()
-        return Response(vote.data)
+        return Response({'status': ' upvote set'})
 
     @action(detail=True, methods=['post'])
     def downvote(self, request, pk=None):
-        vote = GhostPost.objects.filter(pk=post_id).first()
+        vote = GhostPost.objects.filter(id=pk).first()
         vote.downvote += 1
         vote.save()
-        return Response(vote.data)
+        return Response({'status': ' upvote set'})
