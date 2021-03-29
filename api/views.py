@@ -40,8 +40,8 @@ class GhostPostViewSet(ModelViewSet):
         return Response(vote.data)
 
     @action(detail=True, methods=['post'])
-    def upvote(self, request, pk=None):
+    def downvote(self, request, pk=None):
         vote = GhostPost.objects.filter(pk=post_id).first()
-        vote.upvote += 1
+        vote.downvote += 1
         vote.save()
         return Response(vote.data)
