@@ -12,5 +12,5 @@ class GhostPostSerializer(ModelSerializer):
             "upvote",
             "downvote",
             "created_at",
-            "total_votes"
+            # "total_votes"
         )

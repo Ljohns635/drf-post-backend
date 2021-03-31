@@ -13,7 +13,7 @@ class GhostPost(models.Model):
     upvote = models.IntegerField(default=0)
     downvote = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
-    total_votes = models.IntegerField(default=0)
+    # total_votes = models.IntegerField(default=0)
 
     def __str__(self):
         return f" {self.post} | {self.post_type} "

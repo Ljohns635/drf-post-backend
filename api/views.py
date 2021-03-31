@@ -44,4 +44,4 @@ class GhostPostViewSet(ModelViewSet):
         vote = GhostPost.objects.filter(id=pk).first()
         vote.downvote += 1
         vote.save()
-        return Response({'status': ' upvote set'})
+        return Response({'status': ' downvote set'})
