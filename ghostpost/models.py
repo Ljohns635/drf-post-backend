@@ -2,13 +2,15 @@ from django.db import models
 from django.utils import timezone
 
 class GhostPost(models.Model):
+    SELECT=''
     ROAST = 'Roast'
     BOAST = 'Boast'
-    CHOICES = [
+    CHOICES = (
+        (SELECT,'---Select---'),
         (ROAST, 'Roast'),
         (BOAST, 'Boast'),
-    ]
-    post_type = models.CharField(max_length=7, choices=CHOICES)
+    )
+    post_type = models.CharField(max_length=12, choices=CHOICES)
     post = models.CharField(max_length=280)
     upvote = models.IntegerField(default=0)
     downvote = models.IntegerField(default=0)
